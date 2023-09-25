@@ -1,11 +1,13 @@
-"""The objective of this module is to provide a class that will help mocking database data,
-considering that it will always return the same values from the same tables, and these values
+"""The objective of this module is to provide a class that will help mocking
+database data, considering that it will always return the same values from
+the same tables, and these values
 must be related with the real data.
 """
 from itertools import product
 from typing import Any, Dict, List, Union
 
 from mock import Mock
+
 
 class MoMock(Mock):
     def to_dict(self):
@@ -38,10 +40,22 @@ class Mockito:
         for db_name, db_columns_list in self.data_dict.items():
             for column in db_columns_list:
                 if isinstance(column, list):
-                    setattr(response, column[1], data_bases.get(db_name, {}).get(column[0], "invalid column"))
+                    setattr(
+                        response,
+                        column[1],
+                        data_bases.get(db_name, {}).get(
+                            column[0], "invalid column"
+                        ),
+                    )
                     args.append(column[1])
                 else:
-                    setattr(response, column, data_bases.get(db_name, {}).get(column, "invalid column"))
+                    setattr(
+                        response,
+                        column,
+                        data_bases.get(db_name, {}).get(
+                            column, "invalid column"
+                        ),
+                    )
                     args.append(column)
 
         setattr(response, "_args", args)
@@ -50,13 +64,19 @@ class Mockito:
 
     def one(self) -> MoMock:
         """Return the first values for the chosen tables."""
-        data_bases = {base: self.data_bases.get(base, [])[0] for base in self.data_dict.keys()}
+        data_bases = {
+            base: self.data_bases.get(base, [])[0]
+            for base in self.data_dict.keys()
+        }
 
         return self.prepare_mock(data_bases)
 
     def all_combinations(self, return_dicts: bool = False) -> List[MoMock]:
         """Return all the possibles combinations from the chosen tables."""
-        data_bases = {base: self.data_bases.get(base, []) for base in self.data_dict.keys()}
+        data_bases = {
+            base: self.data_bases.get(base, [])
+            for base in self.data_dict.keys()
+        }
         all_combinations = []
         for key, values in data_bases.items():
             structured_data = []
@@ -72,6 +92,10 @@ class Mockito:
             values = {}
             for t1 in product_tuple:
                 values.update(t1)
-            response.append(self.prepare_mock(values).to_dict() if return_dicts else self.prepare_mock(values))
+            response.append(
+                self.prepare_mock(values).to_dict()
+                if return_dicts
+                else self.prepare_mock(values)
+            )
 
         return response
