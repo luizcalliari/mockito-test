@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from parameterized import parameterized, parameterized_class
 
-D_T = {
+DATA_TABLES = {
     "table_1": [
         {"column_1": "value1", "column_2": "value2"},
         {"column_1": "value3", "column_2": "value4"},
@@ -44,7 +44,7 @@ class TestMockito(TestCase):
     def test_mockito_one(self):
         from mockito import Mockito
 
-        response = Mockito(data_dict=self.data, data_bases=D_T).one()
+        response = Mockito(data_dict=self.data, data_bases=DATA_TABLES).one()
 
         self.assertEqual(
             response.column_1, self.expected_response1["column_1"]
@@ -70,7 +70,7 @@ class TestMockito(TestCase):
         from mockito import Mockito
 
         response = Mockito(
-            data_dict=self.data, data_bases=D_T
+            data_dict=self.data, data_bases=DATA_TABLES
         ).all_combinations(return_dicts=return_dicts)
 
         if return_dicts:
