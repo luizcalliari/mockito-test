@@ -3,3 +3,25 @@ line-length = 79
 
 [tool.isort]
 profile = "black"
+
+[build-system]
+requires = ["setuptools>=61.0", "unittest.mock>=3.11"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mockito_luizcalliari"
+version = "0.0.1"
+authors = [
+	{name="Luiz Antonio Calliari Filho", email="luizcalliari.filho@gmail.com"},
+]
+descripton = "Package to help standardization of data used in mocks."
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/luizcalliari/mockito"
+"Bug Tracker" = "https://github.com/luizcalliari/mockito/issues"
