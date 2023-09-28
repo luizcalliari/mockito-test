@@ -42,7 +42,7 @@ DATA_TABLES = {
 )
 class TestMockito(TestCase):
     def test_mockito_one(self):
-        from mockito import Mockito
+        from src.mockito.mockito import Mockito
 
         response = Mockito(data_dict=self.data, data_bases=DATA_TABLES).one()
 
@@ -67,7 +67,7 @@ class TestMockito(TestCase):
 
     @parameterized.expand([(False,), (True,)])
     def test_mockito_all_combinations(self, return_dicts):
-        from mockito import Mockito
+        from src.mockito.mockito import Mockito
 
         response = Mockito(
             data_dict=self.data, data_bases=DATA_TABLES
