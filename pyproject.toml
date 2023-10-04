@@ -10,7 +10,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mockito-calliari"
-version = "0.0.1"
+version = "0.2"
 authors = [
 	{name="Luiz Antonio Calliari Filho", email="luizcalliari.filho@gmail.com"},
 ]
@@ -22,8 +22,10 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+keywords = ["mock", "tests"]
 dependencies = ["mock >= 5.0.0"]
 
 [project.urls]
 "Homepage" = "https://github.com/luizcalliari/mockito"
 "Bug Tracker" = "https://github.com/luizcalliari/mockito/issues"
+"Documentation" = "https://github.com/luizcalliari/mockito/wiki"
