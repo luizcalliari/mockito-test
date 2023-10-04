@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: mockito
+Name: mockito-calliari
 Version: 0.0.1
 Summary: Package to help standardization of data used in mocks.
 Author-email: Luiz Antonio Calliari Filho <luizcalliari.filho@gmail.com>
@@ -9,4 +9,9 @@ Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
+Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: mock>=5.0.0
+
+# mokito
+Package to help standardization of data used in mocks.
