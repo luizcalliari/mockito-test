@@ -10,7 +10,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mockito-test"
-version = "0.3"
+version = "0.3.2"
 authors = [
 	{name="Luiz Antonio Calliari Filho", email="luizcalliari.filho@gmail.com"},
 ]
@@ -26,6 +26,6 @@ keywords = ["mock", "tests", "unittest"]
 dependencies = ["mock >= 5.0.0"]
 
 [project.urls]
-"Homepage" = "https://github.com/luizcalliari/mockito"
-"Bug Tracker" = "https://github.com/luizcalliari/mockito/issues"
-"Documentation" = "https://github.com/luizcalliari/mockito/wiki"
+"Homepage" = "https://github.com/luizcalliari/mockito-test"
+"Bug Tracker" = "https://github.com/luizcalliari/mockito-test/issues"
+"Documentation" = "https://github.com/luizcalliari/mockito-test/wiki"
