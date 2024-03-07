@@ -9,8 +9,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mockito-calliari"
-version = "0.2"
+name = "mockito-test"
+version = "0.3"
 authors = [
 	{name="Luiz Antonio Calliari Filho", email="luizcalliari.filho@gmail.com"},
 ]
@@ -22,7 +22,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-keywords = ["mock", "tests"]
+keywords = ["mock", "tests", "unittest"]
 dependencies = ["mock >= 5.0.0"]
 
 [project.urls]
